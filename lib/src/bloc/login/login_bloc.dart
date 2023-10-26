@@ -17,9 +17,7 @@ import '../../domain/password.dart';
 import '../../domain/user_name.dart';
 
 part 'login_event.dart';
-
 part 'login_state.dart';
-
 part 'login_bloc.freezed.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
@@ -32,6 +30,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         passwordChanged: (password) => _onPasswordChanged(emit, password),
         obscurePasswordToggled: () => _onObscurePasswordToggled(emit),
         loginSubmitted: () => _onLoginSubmitted(emit, repository),
+        resetForm: () => _onResetForm(emit),
       );
     });
   }
@@ -58,6 +57,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     emit(state.copyWith(obscurePassword: !state.obscurePassword));
   }
 
+  void _onResetForm(Emitter<LoginState> emit) {
+    emit(LoginState.initForm());
+  }
+
   Future<void> _onLoginSubmitted(Emitter<LoginState> emit, UserRepository repository) async {
     final isUserNameValid = state.userName.value.isRight(); // check invalid
     final isPasswordValid = state.password.value.isRight();
@@ -71,8 +74,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       );
 
       // Perform network request to get a token.
-
-      // await Future.delayed(const Duration(seconds: 1));
       final payload = LoginReq(
         userName: state.userName.value.fold((l) => null, (r) => r),
         password: state.password.value.fold((l) => null, (r) => r),
@@ -113,7 +114,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
           // For now we will just see if the User Name and password were valid or not
           // and accordingly set authFailureOrSuccess' value.
-
           authFailureOrSuccess: (isUserNameValid && isPasswordValid) ? right(unit) : null,
           // authFailureOrSuccess: left(const AuthFailure.invalidUserNameAndPasswordCombination()),
         ),

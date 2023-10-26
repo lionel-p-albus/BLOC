@@ -6,22 +6,24 @@ class InputTextField extends StatelessWidget {
   final Color? color;
   final String nameTextField;
   final String labelTextField;
+  final dynamic? initialValue;
   final TextInputType? inputType;
   final bool isObscureText;
   final FormFieldValidator<String>? validator;
-  final AutovalidateMode? autovalidateMode;
+  final AutovalidateMode? autoValidateMode;
   final ValueChanged<dynamic>? onChanged;
 
   const InputTextField({
     Key? key,
     required this.nameTextField,
     required this.labelTextField,
+    this.initialValue,
     this.inputType,
     this.color,
     this.isObscureText = false,
     this.onChanged,
     this.validator,
-    this.autovalidateMode,
+    this.autoValidateMode,
   }) : super(key: key);
 
   @override
@@ -30,6 +32,7 @@ class InputTextField extends StatelessWidget {
       name: nameTextField,
       keyboardType: inputType ?? TextInputType.text,
       obscureText: isObscureText,
+      initialValue: initialValue,
       onChanged: onChanged,
       decoration: InputDecoration(
         labelText: labelTextField,
@@ -37,7 +40,7 @@ class InputTextField extends StatelessWidget {
         labelStyle: TextStyle(color: color ?? Colors.grey, fontFamily: 'Prompt'),
       ),
       validator: validator ?? FormBuilderValidators.required(errorText: 'โปรดใส่ข้อมูล'),
-      autovalidateMode: autovalidateMode,
+      autovalidateMode: autoValidateMode,
     );
   }
 }

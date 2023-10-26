@@ -9,5 +9,7 @@ class LoginEvent with _$LoginEvent {
   const factory LoginEvent.obscurePasswordToggled() = _ObscurePasswordToggled;
 
   const factory LoginEvent.loginSubmitted() = _LoginSubmitted;
+
+  const factory LoginEvent.resetForm() = _ResetForm;
 }
 

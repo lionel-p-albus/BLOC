@@ -12,6 +12,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
+
     return GestureDetector(
       onTap: () => WidgetsBinding.instance.focusManager.primaryFocus?.unfocus(),
       child: Scaffold(
@@ -58,6 +60,9 @@ class LoginPage extends StatelessWidget {
                     // );
                     Navigator.pushNamed(context, AppRoute.home);
 
+                    BlocProvider.of<LoginBloc>(context).add(const LoginEvent.resetForm());
+                    formKey.currentState?.reset();
+
                     Fluttertoast.showToast(
                       msg: "Sign in successful...",
                       toastLength: Toast.LENGTH_SHORT,
@@ -86,6 +91,7 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                         Form(
+                          key: formKey,
                           child: Column(
                             children: [
                               Padding(
@@ -95,9 +101,10 @@ class LoginPage extends StatelessWidget {
                                 child: InputTextField(
                                   nameTextField: 'username',
                                   labelTextField: 'รหัสพนักงาน',
+                                  // initialValue: state.userName.value.fold((l) => null, (r) => r),
                                   onChanged: (value) => context
                                       .read<LoginBloc>()
-                                      .add(LoginEvent.userNameChanged(value)),
+                                      .add(LoginEvent.userNameChanged(value ?? '')),
                                   validator: (_) =>
                                       state.userName.value.fold<String?>(
                                     (f) => f.maybeMap<String?>(
@@ -107,7 +114,7 @@ class LoginPage extends StatelessWidget {
                                     ),
                                     (_) => null,
                                   ),
-                                  autovalidateMode: state.showErrorMessage
+                                  autoValidateMode: state.showErrorMessage
                                       ? AutovalidateMode.always
                                       : AutovalidateMode.disabled,
                                 ),
@@ -121,9 +128,10 @@ class LoginPage extends StatelessWidget {
                                   nameTextField: 'password',
                                   labelTextField: 'รหัสผ่าน',
                                   isObscureText: true,
+                                  // initialValue: state.password.value.fold((l) => null, (r) => r),
                                   onChanged: (value) => context
                                       .read<LoginBloc>()
-                                      .add(LoginEvent.passwordChanged(value)),
+                                      .add(LoginEvent.passwordChanged(value ?? '')),
                                   validator: (_) =>
                                       state.password.value.fold<String?>(
                                     (f) => f.maybeMap<String?>(
@@ -132,7 +140,7 @@ class LoginPage extends StatelessWidget {
                                     ),
                                     (_) => null,
                                   ),
-                                  autovalidateMode: state.showErrorMessage
+                                  autoValidateMode: state.showErrorMessage
                                       ? AutovalidateMode.always
                                       : AutovalidateMode.disabled,
                                 ),

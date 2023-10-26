@@ -22,6 +22,7 @@ mixin _$LoginEvent {
     required TResult Function(String password) passwordChanged,
     required TResult Function() obscurePasswordToggled,
     required TResult Function() loginSubmitted,
+    required TResult Function() resetForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$LoginEvent {
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? obscurePasswordToggled,
     TResult? Function()? loginSubmitted,
+    TResult? Function()? resetForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$LoginEvent {
     TResult Function(String password)? passwordChanged,
     TResult Function()? obscurePasswordToggled,
     TResult Function()? loginSubmitted,
+    TResult Function()? resetForm,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,7 @@ mixin _$LoginEvent {
     required TResult Function(_ObscurePasswordToggled value)
         obscurePasswordToggled,
     required TResult Function(_LoginSubmitted value) loginSubmitted,
+    required TResult Function(_ResetForm value) resetForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +60,7 @@ mixin _$LoginEvent {
     TResult? Function(_PasswordChanged value)? passwordChanged,
     TResult? Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
     TResult? Function(_LoginSubmitted value)? loginSubmitted,
+    TResult? Function(_ResetForm value)? resetForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +69,7 @@ mixin _$LoginEvent {
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
     TResult Function(_LoginSubmitted value)? loginSubmitted,
+    TResult Function(_ResetForm value)? resetForm,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -157,6 +163,7 @@ class _$UserNameChangedImpl implements _UserNameChanged {
     required TResult Function(String password) passwordChanged,
     required TResult Function() obscurePasswordToggled,
     required TResult Function() loginSubmitted,
+    required TResult Function() resetForm,
   }) {
     return userNameChanged(userName);
   }
@@ -168,6 +175,7 @@ class _$UserNameChangedImpl implements _UserNameChanged {
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? obscurePasswordToggled,
     TResult? Function()? loginSubmitted,
+    TResult? Function()? resetForm,
   }) {
     return userNameChanged?.call(userName);
   }
@@ -179,6 +187,7 @@ class _$UserNameChangedImpl implements _UserNameChanged {
     TResult Function(String password)? passwordChanged,
     TResult Function()? obscurePasswordToggled,
     TResult Function()? loginSubmitted,
+    TResult Function()? resetForm,
     required TResult orElse(),
   }) {
     if (userNameChanged != null) {
@@ -195,6 +204,7 @@ class _$UserNameChangedImpl implements _UserNameChanged {
     required TResult Function(_ObscurePasswordToggled value)
         obscurePasswordToggled,
     required TResult Function(_LoginSubmitted value) loginSubmitted,
+    required TResult Function(_ResetForm value) resetForm,
   }) {
     return userNameChanged(this);
   }
@@ -206,6 +216,7 @@ class _$UserNameChangedImpl implements _UserNameChanged {
     TResult? Function(_PasswordChanged value)? passwordChanged,
     TResult? Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
     TResult? Function(_LoginSubmitted value)? loginSubmitted,
+    TResult? Function(_ResetForm value)? resetForm,
   }) {
     return userNameChanged?.call(this);
   }
@@ -217,6 +228,7 @@ class _$UserNameChangedImpl implements _UserNameChanged {
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
     TResult Function(_LoginSubmitted value)? loginSubmitted,
+    TResult Function(_ResetForm value)? resetForm,
     required TResult orElse(),
   }) {
     if (userNameChanged != null) {
@@ -305,6 +317,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     required TResult Function(String password) passwordChanged,
     required TResult Function() obscurePasswordToggled,
     required TResult Function() loginSubmitted,
+    required TResult Function() resetForm,
   }) {
     return passwordChanged(password);
   }
@@ -316,6 +329,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? obscurePasswordToggled,
     TResult? Function()? loginSubmitted,
+    TResult? Function()? resetForm,
   }) {
     return passwordChanged?.call(password);
   }
@@ -327,6 +341,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     TResult Function(String password)? passwordChanged,
     TResult Function()? obscurePasswordToggled,
     TResult Function()? loginSubmitted,
+    TResult Function()? resetForm,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -343,6 +358,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     required TResult Function(_ObscurePasswordToggled value)
         obscurePasswordToggled,
     required TResult Function(_LoginSubmitted value) loginSubmitted,
+    required TResult Function(_ResetForm value) resetForm,
   }) {
     return passwordChanged(this);
   }
@@ -354,6 +370,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     TResult? Function(_PasswordChanged value)? passwordChanged,
     TResult? Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
     TResult? Function(_LoginSubmitted value)? loginSubmitted,
+    TResult? Function(_ResetForm value)? resetForm,
   }) {
     return passwordChanged?.call(this);
   }
@@ -365,6 +382,7 @@ class _$PasswordChangedImpl implements _PasswordChanged {
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
     TResult Function(_LoginSubmitted value)? loginSubmitted,
+    TResult Function(_ResetForm value)? resetForm,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -428,6 +446,7 @@ class _$ObscurePasswordToggledImpl implements _ObscurePasswordToggled {
     required TResult Function(String password) passwordChanged,
     required TResult Function() obscurePasswordToggled,
     required TResult Function() loginSubmitted,
+    required TResult Function() resetForm,
   }) {
     return obscurePasswordToggled();
   }
@@ -439,6 +458,7 @@ class _$ObscurePasswordToggledImpl implements _ObscurePasswordToggled {
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? obscurePasswordToggled,
     TResult? Function()? loginSubmitted,
+    TResult? Function()? resetForm,
   }) {
     return obscurePasswordToggled?.call();
   }
@@ -450,6 +470,7 @@ class _$ObscurePasswordToggledImpl implements _ObscurePasswordToggled {
     TResult Function(String password)? passwordChanged,
     TResult Function()? obscurePasswordToggled,
     TResult Function()? loginSubmitted,
+    TResult Function()? resetForm,
     required TResult orElse(),
   }) {
     if (obscurePasswordToggled != null) {
@@ -466,6 +487,7 @@ class _$ObscurePasswordToggledImpl implements _ObscurePasswordToggled {
     required TResult Function(_ObscurePasswordToggled value)
         obscurePasswordToggled,
     required TResult Function(_LoginSubmitted value) loginSubmitted,
+    required TResult Function(_ResetForm value) resetForm,
   }) {
     return obscurePasswordToggled(this);
   }
@@ -477,6 +499,7 @@ class _$ObscurePasswordToggledImpl implements _ObscurePasswordToggled {
     TResult? Function(_PasswordChanged value)? passwordChanged,
     TResult? Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
     TResult? Function(_LoginSubmitted value)? loginSubmitted,
+    TResult? Function(_ResetForm value)? resetForm,
   }) {
     return obscurePasswordToggled?.call(this);
   }
@@ -488,6 +511,7 @@ class _$ObscurePasswordToggledImpl implements _ObscurePasswordToggled {
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
     TResult Function(_LoginSubmitted value)? loginSubmitted,
+    TResult Function(_ResetForm value)? resetForm,
     required TResult orElse(),
   }) {
     if (obscurePasswordToggled != null) {
@@ -543,6 +567,7 @@ class _$LoginSubmittedImpl implements _LoginSubmitted {
     required TResult Function(String password) passwordChanged,
     required TResult Function() obscurePasswordToggled,
     required TResult Function() loginSubmitted,
+    required TResult Function() resetForm,
   }) {
     return loginSubmitted();
   }
@@ -554,6 +579,7 @@ class _$LoginSubmittedImpl implements _LoginSubmitted {
     TResult? Function(String password)? passwordChanged,
     TResult? Function()? obscurePasswordToggled,
     TResult? Function()? loginSubmitted,
+    TResult? Function()? resetForm,
   }) {
     return loginSubmitted?.call();
   }
@@ -565,6 +591,7 @@ class _$LoginSubmittedImpl implements _LoginSubmitted {
     TResult Function(String password)? passwordChanged,
     TResult Function()? obscurePasswordToggled,
     TResult Function()? loginSubmitted,
+    TResult Function()? resetForm,
     required TResult orElse(),
   }) {
     if (loginSubmitted != null) {
@@ -581,6 +608,7 @@ class _$LoginSubmittedImpl implements _LoginSubmitted {
     required TResult Function(_ObscurePasswordToggled value)
         obscurePasswordToggled,
     required TResult Function(_LoginSubmitted value) loginSubmitted,
+    required TResult Function(_ResetForm value) resetForm,
   }) {
     return loginSubmitted(this);
   }
@@ -592,6 +620,7 @@ class _$LoginSubmittedImpl implements _LoginSubmitted {
     TResult? Function(_PasswordChanged value)? passwordChanged,
     TResult? Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
     TResult? Function(_LoginSubmitted value)? loginSubmitted,
+    TResult? Function(_ResetForm value)? resetForm,
   }) {
     return loginSubmitted?.call(this);
   }
@@ -603,6 +632,7 @@ class _$LoginSubmittedImpl implements _LoginSubmitted {
     TResult Function(_PasswordChanged value)? passwordChanged,
     TResult Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
     TResult Function(_LoginSubmitted value)? loginSubmitted,
+    TResult Function(_ResetForm value)? resetForm,
     required TResult orElse(),
   }) {
     if (loginSubmitted != null) {
@@ -614,6 +644,127 @@ class _$LoginSubmittedImpl implements _LoginSubmitted {
 
 abstract class _LoginSubmitted implements LoginEvent {
   const factory _LoginSubmitted() = _$LoginSubmittedImpl;
+}
+
+/// @nodoc
+abstract class _$$ResetFormImplCopyWith<$Res> {
+  factory _$$ResetFormImplCopyWith(
+          _$ResetFormImpl value, $Res Function(_$ResetFormImpl) then) =
+      __$$ResetFormImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ResetFormImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$ResetFormImpl>
+    implements _$$ResetFormImplCopyWith<$Res> {
+  __$$ResetFormImplCopyWithImpl(
+      _$ResetFormImpl _value, $Res Function(_$ResetFormImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ResetFormImpl implements _ResetForm {
+  const _$ResetFormImpl();
+
+  @override
+  String toString() {
+    return 'LoginEvent.resetForm()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ResetFormImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String userName) userNameChanged,
+    required TResult Function(String password) passwordChanged,
+    required TResult Function() obscurePasswordToggled,
+    required TResult Function() loginSubmitted,
+    required TResult Function() resetForm,
+  }) {
+    return resetForm();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String userName)? userNameChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? obscurePasswordToggled,
+    TResult? Function()? loginSubmitted,
+    TResult? Function()? resetForm,
+  }) {
+    return resetForm?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String userName)? userNameChanged,
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? obscurePasswordToggled,
+    TResult Function()? loginSubmitted,
+    TResult Function()? resetForm,
+    required TResult orElse(),
+  }) {
+    if (resetForm != null) {
+      return resetForm();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UserNameChanged value) userNameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ObscurePasswordToggled value)
+        obscurePasswordToggled,
+    required TResult Function(_LoginSubmitted value) loginSubmitted,
+    required TResult Function(_ResetForm value) resetForm,
+  }) {
+    return resetForm(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UserNameChanged value)? userNameChanged,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
+    TResult? Function(_LoginSubmitted value)? loginSubmitted,
+    TResult? Function(_ResetForm value)? resetForm,
+  }) {
+    return resetForm?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UserNameChanged value)? userNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ObscurePasswordToggled value)? obscurePasswordToggled,
+    TResult Function(_LoginSubmitted value)? loginSubmitted,
+    TResult Function(_ResetForm value)? resetForm,
+    required TResult orElse(),
+  }) {
+    if (resetForm != null) {
+      return resetForm(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ResetForm implements LoginEvent {
+  const factory _ResetForm() = _$ResetFormImpl;
 }
 
 /// @nodoc
