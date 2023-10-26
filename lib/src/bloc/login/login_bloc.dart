@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 import 'package:poc_nid/src/models/login/login/login_req.dart';
 import 'package:poc_nid/src/repositories/user_repository.dart';
