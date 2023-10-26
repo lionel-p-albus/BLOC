@@ -12,8 +12,6 @@ class LoginState with _$LoginState {
   }) = _LoginState;
 
   factory LoginState.initForm() => LoginState(
-        // userName: UserName('94042'),
-        // password: Password('0000'),
         userName: UserName(''),
         password: Password(''),
       );
