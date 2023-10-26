@@ -102,23 +102,22 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           ),
         );
       });
-    }
+    } else {
+      emit(
+        state.copyWith(
+          isSubmitting: false,
+          showErrorMessage: true,
 
-    // emit(
-    //   state.copyWith(
-    //     isSubmitting: false,
-    //     showErrorMessage: true,
-    //
-    //     // Depending on the response received from the server after login in,
-    //     // emit proper authFailureOrSuccess.
-    //
-    //     // For now we will just see if the User Name and password were valid or not
-    //     // and accordingly set authFailureOrSuccess' value.
-    //
-    //     authFailureOrSuccess:
-    //         (isUserNameValid && isPasswordValid) ? right(unit) : null,
-    //     // authFailureOrSuccess: left(const AuthFailure.invalidUserNameAndPasswordCombination()),
-    //   ),
-    // );
+          // Depending on the response received from the server after login in,
+          // emit proper authFailureOrSuccess.
+
+          // For now we will just see if the User Name and password were valid or not
+          // and accordingly set authFailureOrSuccess' value.
+
+          authFailureOrSuccess: (isUserNameValid && isPasswordValid) ? right(unit) : null,
+          // authFailureOrSuccess: left(const AuthFailure.invalidUserNameAndPasswordCombination()),
+        ),
+      );
+    }
   }
 }
