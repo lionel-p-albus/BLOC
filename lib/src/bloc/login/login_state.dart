@@ -3,8 +3,8 @@ part of 'login_bloc.dart';
 @freezed
 class LoginState with _$LoginState {
   const factory LoginState({
-    required UserName userName,
-    required Password password,
+    required StringValue userName,
+    required StringValue password,
     @Default(false) bool isSubmitting,
     @Default(false) bool showErrorMessage,
     @Default(true) bool obscurePassword,
@@ -12,7 +12,7 @@ class LoginState with _$LoginState {
   }) = _LoginState;
 
   factory LoginState.initForm() => LoginState(
-        userName: UserName(''),
-        password: Password(''),
+        userName: StringValue('', 'inValidUsernamePattern'),
+        password: StringValue('', 'inValidPasswordPattern'),
       );
 }

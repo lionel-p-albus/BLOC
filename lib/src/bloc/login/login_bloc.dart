@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:poc_nid/src/models/login/login/login_req.dart';
 import 'package:poc_nid/src/repositories/user_repository.dart';
 
@@ -13,11 +15,12 @@ import 'package:flutter/foundation.dart';
 import '../../../utils/secure_storage.dart';
 import '../../constants/secure_key.dart';
 import '../../core/auth_failure.dart';
-import '../../domain/password.dart';
-import '../../domain/user_name.dart';
+import '../../domain/string_value.dart';
 
 part 'login_event.dart';
+
 part 'login_state.dart';
+
 part 'login_bloc.freezed.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
@@ -38,7 +41,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   void _onUserNameChanged(Emitter<LoginState> emit, String userName) {
     emit(
       state.copyWith(
-        userName: UserName(userName),
+        userName: StringValue(userName, 'inValidUsernamePattern'),
         authFailureOrSuccess: null,
       ),
     );
@@ -47,7 +50,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   void _onPasswordChanged(Emitter<LoginState> emit, String password) {
     emit(
       state.copyWith(
-        password: Password(password),
+        password: StringValue(password, 'inValidPasswordPattern'),
         authFailureOrSuccess: null,
       ),
     );
@@ -61,7 +64,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     emit(LoginState.initForm());
   }
 
-  Future<void> _onLoginSubmitted(Emitter<LoginState> emit, UserRepository repository) async {
+  Future<void> _onLoginSubmitted(
+      Emitter<LoginState> emit, UserRepository repository) async {
     final isUserNameValid = state.userName.value.isRight(); // check invalid
     final isPasswordValid = state.password.value.isRight();
 
@@ -79,8 +83,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         password: state.password.value.fold((l) => null, (r) => r),
       );
 
+      EasyLoading.show(status: 'loading...');
       await repository.getToken(payload).then(
         (resp) {
+          EasyLoading.dismiss();
+
           SecureStorage().writeSecureData(
             SecureKey.userToken,
             resp?.accessToken,
@@ -95,6 +102,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           );
         },
       ).catchError((e) {
+        EasyLoading.dismiss();
+
         emit(
           state.copyWith(
             isSubmitting: false,

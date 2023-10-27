@@ -6,7 +6,7 @@ class InputTextField extends StatelessWidget {
   final Color? color;
   final String nameTextField;
   final String labelTextField;
-  final dynamic? initialValue;
+  final dynamic initialValue;
   final TextInputType? inputType;
   final bool isObscureText;
   final FormFieldValidator<String>? validator;

@@ -769,8 +769,8 @@ abstract class _ResetForm implements LoginEvent {
 
 /// @nodoc
 mixin _$LoginState {
-  UserName get userName => throw _privateConstructorUsedError;
-  Password get password => throw _privateConstructorUsedError;
+  StringValue get userName => throw _privateConstructorUsedError;
+  StringValue get password => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   bool get showErrorMessage => throw _privateConstructorUsedError;
   bool get obscurePassword => throw _privateConstructorUsedError;
@@ -789,8 +789,8 @@ abstract class $LoginStateCopyWith<$Res> {
       _$LoginStateCopyWithImpl<$Res, LoginState>;
   @useResult
   $Res call(
-      {UserName userName,
-      Password password,
+      {StringValue userName,
+      StringValue password,
       bool isSubmitting,
       bool showErrorMessage,
       bool obscurePassword,
@@ -821,11 +821,11 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
       userName: null == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
-              as UserName,
+              as StringValue,
       password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password,
+              as StringValue,
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -855,8 +855,8 @@ abstract class _$$LoginStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {UserName userName,
-      Password password,
+      {StringValue userName,
+      StringValue password,
       bool isSubmitting,
       bool showErrorMessage,
       bool obscurePassword,
@@ -885,11 +885,11 @@ class __$$LoginStateImplCopyWithImpl<$Res>
       userName: null == userName
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
-              as UserName,
+              as StringValue,
       password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password,
+              as StringValue,
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -922,9 +922,9 @@ class _$LoginStateImpl implements _LoginState {
       this.authFailureOrSuccess});
 
   @override
-  final UserName userName;
+  final StringValue userName;
   @override
-  final Password password;
+  final StringValue password;
   @override
   @JsonKey()
   final bool isSubmitting;
@@ -974,8 +974,8 @@ class _$LoginStateImpl implements _LoginState {
 
 abstract class _LoginState implements LoginState {
   const factory _LoginState(
-          {required final UserName userName,
-          required final Password password,
+          {required final StringValue userName,
+          required final StringValue password,
           final bool isSubmitting,
           final bool showErrorMessage,
           final bool obscurePassword,
@@ -983,9 +983,9 @@ abstract class _LoginState implements LoginState {
       _$LoginStateImpl;
 
   @override
-  UserName get userName;
+  StringValue get userName;
   @override
-  Password get password;
+  StringValue get password;
   @override
   bool get isSubmitting;
   @override

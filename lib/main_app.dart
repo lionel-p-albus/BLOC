@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:poc_nid/src/pages/home.dart';
 import 'package:poc_nid/src/pages/login.dart';
 import 'package:poc_nid/src/pages/resetPassword.dart';
@@ -20,6 +21,7 @@ class MainApp extends StatelessWidget {
       },
       initialRoute: '/login',
       navigatorKey: navigatorState,
+      builder: EasyLoading.init(),
     );
   }
 }
