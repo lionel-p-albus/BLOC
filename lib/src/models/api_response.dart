@@ -1,20 +1,13 @@
-// ignore_for_file: unnecessary_null_comparison
-
-ApiResponse buildResponse<T>(Map<String, dynamic> response, Function(dynamic) fromJson) => ApiResponse<T>.fromJson(response, fromJson);
+ApiResponse buildResponse<T>(
+  Map<String, dynamic> response,
+  Function(dynamic) fromJson,
+) => ApiResponse<T>.fromJson(response, fromJson);
 
 class ApiResponse<T> {
-  T? response;
   String? message;
+  T? response;
 
-  ApiResponse({
-    this.response,
-    this.message,
-  });
+  ApiResponse({this.message, this.response});
 
-  factory ApiResponse.fromJson(
-          Map<String, dynamic> json, Function(dynamic) fromJson) =>
-      ApiResponse(
-        response: json == null ? null : fromJson(json),
-        message: json == null ? null : json["message"],
-      );
+  factory ApiResponse.fromJson(Map<String, dynamic> json, Function(dynamic) fromJson) => ApiResponse(message: json["message"], response: fromJson(json));
 }

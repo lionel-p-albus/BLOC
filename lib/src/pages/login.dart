@@ -41,7 +41,6 @@ class LoginPage extends StatelessWidget {
                     //     ),
                     //   ),
                     // );
-
                     Fluttertoast.showToast(
                       msg: 'Invalid userName and password combination!',
                       toastLength: Toast.LENGTH_SHORT,
