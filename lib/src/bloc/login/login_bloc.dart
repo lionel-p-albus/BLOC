@@ -5,22 +5,19 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:poc_nid/src/constants/secure_key.dart';
+import 'package:poc_nid/src/core/auth_failure.dart';
+import 'package:poc_nid/src/domain/string_value.dart';
 import 'package:poc_nid/src/models/login/login/login_req.dart';
 import 'package:poc_nid/src/repositories/user_repository.dart';
+import 'package:poc_nid/src/utils/secure_storage.dart';
 
 // This file is "main.dart"
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
-import '../../../utils/secure_storage.dart';
-import '../../constants/secure_key.dart';
-import '../../core/auth_failure.dart';
-import '../../domain/string_value.dart';
-
 part 'login_event.dart';
-
 part 'login_state.dart';
-
 part 'login_bloc.freezed.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
